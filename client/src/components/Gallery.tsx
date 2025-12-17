@@ -4,51 +4,52 @@ import img1 from "@assets/generated_images/cafe_storefront_exterior.png";
 import img2 from "@assets/generated_images/barista_pouring_coffee.png";
 import img3 from "@assets/generated_images/delicious_cafe_food_spread.png";
 import img4 from "@assets/generated_images/people_enjoying_coffee.png";
+import galleryRef from "@assets/gallery_1765989542293.png"; // Keeping for reference/texture if needed
 
 const images = [img1, img2, img3, img4, img1, img2];
 
 export function Gallery() {
-  const targetRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
-    target: targetRef,
+    target: containerRef,
+    offset: ["start end", "end start"],
   });
 
-  // Transform scroll progress to horizontal movement
-  // We want to move the gallery leftwards as we scroll down
-  // The '100vw' is a rough estimate, we'll refine it to ensure it scrolls the full width
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-65%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-background">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        
-        {/* Header Content - Absolute positioned to stay visible or move differently if desired */}
-        <div className="absolute top-12 left-8 md:top-24 md:left-24 z-10 mix-blend-difference text-white pointer-events-none">
-          <h2 className="text-4xl md:text-8xl font-black uppercase tracking-tighter leading-none">
-            The<br/>Space
+    <section ref={containerRef} className="py-24 bg-background overflow-hidden">
+      <div className="container mx-auto px-4 mb-12 flex items-end justify-between">
+        <div>
+          <h2 className="text-4xl md:text-6xl text-primary uppercase tracking-tighter mb-2">
+            The Space
           </h2>
-          <p className="mt-4 font-mono text-sm md:text-lg max-w-xs opacity-80">
-            A curated environment for thoughtful moments.
+          <p className="font-mono text-muted-foreground text-sm md:text-base">
+            Curated specifically for your peace of mind.
           </p>
         </div>
+        <div className="hidden md:block font-mono text-xs text-primary/50">
+          SCROLL TO EXPLORE →
+        </div>
+      </div>
 
-        <motion.div style={{ x }} className="flex gap-4 md:gap-12 pl-[10vw] md:pl-[40vw]">
+      <div className="relative w-full">
+        <motion.div 
+          style={{ x }}
+          className="flex gap-4 md:gap-8 px-4 w-max"
+        >
           {images.map((src, i) => (
-            <div
-              key={i}
-              className="relative h-[50vh] w-[300px] md:h-[70vh] md:w-[500px] flex-shrink-0 overflow-hidden rounded-none"
+            <div 
+              key={i} 
+              className={`relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-500
+                ${i % 2 === 0 ? "w-[300px] h-[400px] md:w-[400px] md:h-[500px]" : "w-[250px] h-[350px] md:w-[350px] md:h-[450px] mt-12"}
+              `}
             >
-              <motion.img
-                src={src}
+              <img 
+                src={src} 
                 alt={`Gallery image ${i + 1}`}
-                className="h-full w-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                initial={{ scale: 1.2 }}
-                whileInView={{ scale: 1 }}
-                transition={{ duration: 0.8 }}
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 hover:scale-100"
               />
-              <div className="absolute bottom-4 left-4 font-mono text-xs text-white/80 bg-black/50 px-2 py-1 backdrop-blur-sm">
-                0{i + 1} — VIEW
-              </div>
             </div>
           ))}
         </motion.div>
