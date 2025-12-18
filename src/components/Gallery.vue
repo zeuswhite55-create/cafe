@@ -21,7 +21,7 @@ const y4 = computed(() => isDesktop.value ? `translateY(${y.value * -0.35}px)` :
 </script>
 
 <template>
-  <section ref="container" class="relative py-12 md:py-32 bg-white min-h-[100vh] overflow-hidden">
+  <section ref="container" class="relative py-12 md:py-20 bg-white overflow-hidden">
     
     <div class="sticky top-12 z-50 px-4 md:px-12 mb-12 md:mb-32 mix-blend-exclusion text-white pointer-events-none">
       <h2 
