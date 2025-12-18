@@ -56,21 +56,21 @@ const reviews = [
         </div>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 border-t border-white/10 pt-16">
+      <div class="flex flex-col md:flex-row gap-12 md:gap-24 border-t border-white/10 pt-16 justify-center items-center md:items-start text-center md:text-left">
         
 
         <div>
           <h4 class="font-bold mb-6 text-accent">Contact Us</h4>
           <ul class="space-y-4 font-mono text-sm opacity-80">
-            <li class="flex items-center gap-3">
+            <li class="flex items-center gap-3 justify-center md:justify-start">
               <Phone class="w-4 h-4" />
               <span>+91 98765 43210</span>
             </li>
-            <li class="flex items-center gap-3">
+            <li class="flex items-center gap-3 justify-center md:justify-start">
               <Mail class="w-4 h-4" />
               <span>hello@bloombrew.com</span>
             </li>
-            <li class="flex items-start gap-3">
+            <li class="flex items-start gap-3 justify-center md:justify-start">
               <MapPin class="w-4 h-4 mt-1" />
               <span>123, Green Street, <br/>Urban District, City - 560001</span>
             </li>
@@ -80,11 +80,11 @@ const reviews = [
         <div>
           <h4 class="font-bold mb-6 text-accent">Opening Hours</h4>
           <ul class="space-y-2 font-mono text-sm opacity-80">
-            <li class="flex justify-between">
+            <li class="flex justify-center md:justify-between gap-8 md:gap-0">
               <span>Mon - Fri</span>
               <span>8:00 AM - 10:00 PM</span>
             </li>
-            <li class="flex justify-between">
+            <li class="flex justify-center md:justify-between gap-8 md:gap-0">
               <span>Sat - Sun</span>
               <span>9:00 AM - 11:00 PM</span>
             </li>
@@ -93,7 +93,7 @@ const reviews = [
 
         <div>
           <h4 class="font-bold mb-6 text-accent">Follow Us</h4>
-          <div class="flex gap-4">
+          <div class="flex gap-4 justify-center md:justify-start">
             <a href="#" class="p-2 bg-white/10 rounded-full hover:bg-accent hover:text-white transition-colors">
               <Instagram class="w-5 h-5" />
             </a>
