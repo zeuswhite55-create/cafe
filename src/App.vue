@@ -8,8 +8,8 @@ import Footer from '@/components/Footer.vue'
 <template>
   <div class="w-full">
     <Hero />
-    <Menu />
     <Gallery />
+    <Menu />
     <Footer />
   </div>
 </template>
