@@ -1,7 +1,7 @@
 <script setup>
 const location = "Bloom & Brew, survey no. 199/1 boura vaddo, Assagao, Assagao, Goa 403507"
 const directLink = "https://maps.app.goo.gl/GzqYFitxi2TX3PCa7"
-const staticMapUrl = `https://maps.googleapis.com/maps/api/staticmap?center=15.5751,73.8376&zoom=16&size=600x400&markers=color:red%7C15.5751,73.8376&key=AIzaSyB41DaxN4lrWGV4sUJbu9nE56sFuCQD8-E`
+const embedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.2695156!2d73.83753!3d15.5751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf5d9c93c0ccd7%3A0x3bbf5d9c93c0ccd7!2sBloom%20%26%20Brew!5e0!3m2!1sen!2sin!4v1703004000"
 </script>
 
 <template>
@@ -15,24 +15,15 @@ const staticMapUrl = `https://maps.googleapis.com/maps/api/staticmap?center=15.5
       </div>
 
       <div class="max-w-2xl mx-auto">
-        <a
-          :href="directLink"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block relative rounded-2xl overflow-hidden shadow-2xl hover:shadow-2xl transition-shadow"
-          style="aspect-ratio: 16/9"
-        >
-          <img 
-            :src="staticMapUrl"
-            alt="Bloom & Brew Location Map"
-            class="w-full h-full object-cover"
-          />
-          <div class="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors flex items-center justify-center">
-            <div class="bg-white/90 px-6 py-3 rounded-full font-bold text-primary hover:bg-white transition-colors">
-              Open Full Map
-            </div>
-          </div>
-        </a>
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl" style="aspect-ratio: 16/9">
+          <iframe
+            :src="embedUrl"
+            class="w-full h-full border-0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
         <div class="text-center mt-8">
           <p class="font-mono text-sm text-primary/70">
             {{ location }}
