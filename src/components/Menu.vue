@@ -1,19 +1,17 @@
 <script setup>
-import { ShoppingBag, UtensilsCrossed } from 'lucide-vue-next'
+import { Play } from 'lucide-vue-next'
+import img1 from "@assets/generated_images/cafe_storefront_exterior.png"
+import img2 from "@assets/generated_images/barista_pouring_coffee.png"
+import img3 from "@assets/generated_images/delicious_cafe_food_spread.png"
+import img4 from "@assets/generated_images/people_enjoying_coffee.png"
+import video from "@assets/Recording_2025-12-17_221508_1765989924133.mp4"
 
-const menuItems = [
-  { name: "Avocado Toast", price: "₹350", desc: "Sourdough, poached egg, chili flakes" },
-  { name: "Truffle Mushroom Pasta", price: "₹450", desc: "Creamy sauce, parmesan, parsley" },
-  { name: "Classic Cappuccino", price: "₹220", desc: "Double shot espresso, steamed milk" },
-  { name: "Matcha Latte", price: "₹280", desc: "Ceremonial grade matcha, oat milk" },
-  { name: "Berry Smoothie Bowl", price: "₹380", desc: "Mixed berries, granola, honey" },
-  { name: "Croissant Sandwich", price: "₹290", desc: "Ham, cheese, arugula, mustard" },
-]
+const galleryImages = [img1, img2, img3, img4]
 </script>
 
 <template>
   <section class="py-24 bg-secondary text-secondary-foreground relative">
-    <div class="container mx-auto px-4 max-w-4xl">
+    <div class="container mx-auto px-4 max-w-7xl">
       <div class="text-center mb-16">
         <h2 class="text-5xl md:text-7xl font-black uppercase mb-4 text-primary">
           Menu
@@ -21,47 +19,55 @@ const menuItems = [
         <div class="w-24 h-1 bg-accent mx-auto" />
       </div>
 
-      <div class="grid md:grid-cols-2 gap-x-12 gap-y-8 mb-16">
+      <div class="grid md:grid-cols-4 gap-6 mb-12">
         <div 
-          v-for="(item, index) in menuItems" 
+          v-for="(img, index) in galleryImages" 
           :key="index"
-          class="group flex justify-between items-start border-b border-primary/10 pb-4 hover:border-accent/50 transition-colors"
+          class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-80 cursor-pointer"
           v-motion
-          :initial="{ opacity: 0, y: 20 }"
-          :visible="{ opacity: 1, y: 0, transition: { delay: index * 100 } }"
+          :initial="{ opacity: 0, scale: 0.9 }"
+          :visible="{ opacity: 1, scale: 1, transition: { delay: index * 100 } }"
         >
-          <div>
-            <h3 class="font-bold text-xl mb-1 group-hover:text-accent transition-colors">
-              {{ item.name }}
-            </h3>
-            <p class="font-mono text-sm text-primary/60">
-              {{ item.desc }}
-            </p>
-          </div>
-          <span class="font-mono font-bold text-lg">{{ item.price }}</span>
+          <img 
+            :src="img" 
+            alt="Menu item"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
         </div>
       </div>
 
-      <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-        <a
-          href="https://swiggy.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="w-full md:w-auto px-8 py-4 bg-[#FC8019] text-white font-bold rounded-xl flex items-center justify-center gap-3 shadow-lg hover:shadow-xl hover:scale-105 transition-all"
-        >
-          <ShoppingBag class="w-5 h-5" />
-          Order on Swiggy
-        </a>
-        
-        <a
-          href="https://zomato.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="w-full md:w-auto px-8 py-4 bg-[#CB202D] text-white font-bold rounded-xl flex items-center justify-center gap-3 shadow-lg hover:shadow-xl hover:scale-105 transition-all"
-        >
-          <UtensilsCrossed class="w-5 h-5" />
-          Order on Zomato
-        </a>
+      <div class="flex flex-col md:flex-row gap-12 items-center justify-center">
+        <div class="flex-1 max-w-xs">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-black" style="aspect-ratio: 9/16">
+            <video 
+              :src="video"
+              class="w-full h-full object-cover"
+              controls
+              autoplay
+              loop
+              muted
+            />
+            <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 hover:opacity-100 transition-opacity">
+              <Play class="w-16 h-16 text-white" />
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-1 text-center md:text-left">
+          <h3 class="text-3xl md:text-4xl font-black mb-4 text-primary">
+            Experience Our Vibe
+          </h3>
+          <p class="text-lg text-secondary-foreground/80 mb-8 font-light">
+            Discover the perfect blend of ambiance, taste, and community. Watch our latest moments and join us for an unforgettable coffee experience.
+          </p>
+          <a
+            href="#"
+            class="inline-block px-8 py-4 bg-accent text-white font-bold rounded-xl hover:bg-accent/90 transition-all hover:scale-105"
+          >
+            Watch More →
+          </a>
+        </div>
       </div>
     </div>
   </section>
