@@ -60,18 +60,6 @@ const reviews = [
       <!-- Info Grid -->
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 border-t border-white/10 pt-16">
         
-        <!-- Brand -->
-        <div class="lg:col-span-1">
-          <img 
-            :src="logo" 
-            alt="Bloom & Brew Logo" 
-            class="w-24 mb-6 invert brightness-0 opacity-90"
-          />
-          <p class="font-mono text-sm opacity-60">
-            Bloom & Brew Cafe.<br/>
-            Est. 2024
-          </p>
-        </div>
 
         <!-- Contact -->
         <div>

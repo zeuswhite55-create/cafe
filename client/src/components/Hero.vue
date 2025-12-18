@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useScroll, useTransform } from '@vueuse/motion' 
 // Note: @vueuse/motion doesn't export useScroll/useTransform exactly like framer-motion
 // We will use standard CSS transforms or specific vueuse/motion directives.
 // For simplicity in this migration, I'll use standard parallax with CSS vars or simple styles.
