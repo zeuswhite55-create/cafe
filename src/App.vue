@@ -2,6 +2,7 @@
 import Hero from '@/components/Hero.vue'
 import Menu from '@/components/Menu.vue'
 import Gallery from '@/components/Gallery.vue'
+import Maps from '@/components/Maps.vue'
 import Footer from '@/components/Footer.vue'
 </script>
 
@@ -10,6 +11,7 @@ import Footer from '@/components/Footer.vue'
     <Hero />
     <Gallery />
     <Menu />
+    <Maps />
     <Footer />
   </div>
 </template>
