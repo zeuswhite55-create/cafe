@@ -59,26 +59,15 @@ onMounted(() => {
       <div class="md:hidden grid grid-cols-2 gap-4 mb-12">
         <!-- Video takes up left side, full height -->
         <div class="row-span-2">
-          <div
-            class="relative rounded-2xl overflow-hidden shadow-2xl bg-black h-full"
-            style="min-height: 400px"
-          >
-            <video
-              :src="video"
-              class="w-full h-full object-cover"
-              autoplay
-              loop
-              muted
-              playsinline
-              webkit-playsinline="true"
-            />
-            <div
-              class="absolute inset-0 flex items-center justify-center bg-black/40 cursor-pointer"
-              @click="$event.currentTarget.previousElementSibling.play()"
-            >
-              <Play class="w-12 h-12 text-white" />
-            </div>
-          </div>
+          <video
+            :src="video"
+            class="w-full h-full object-cover rounded-2xl shadow-2xl"
+            autoplay
+            loop
+            muted
+            playsinline
+            x-webkit-airplay="allow"
+          />
         </div>
         <!-- Images on right side in grid -->
         <div
@@ -107,26 +96,16 @@ onMounted(() => {
       <!-- Desktop: Side by Side Layout -->
       <div class="hidden md:flex flex-row gap-12 items-center justify-center">
         <div class="flex-1 max-w-xs">
-          <div
-            class="relative rounded-2xl overflow-hidden shadow-2xl bg-black"
+          <video
+            :src="video"
+            class="w-full h-full object-cover rounded-2xl shadow-2xl"
             style="aspect-ratio: 9/16"
-          >
-            <video
-              :src="video"
-              class="w-full h-full object-cover"
-              autoplay
-              loop
-              muted
-              playsinline
-              webkit-playsinline="true"
-            />
-            <div
-              class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 hover:opacity-100 transition-opacity cursor-pointer"
-              @click="$event.currentTarget.previousElementSibling.play()"
-            >
-              <Play class="w-16 h-16 text-white" />
-            </div>
-          </div>
+            autoplay
+            loop
+            muted
+            playsinline
+            x-webkit-airplay="allow"
+          />
         </div>
 
         <div class="flex-1 text-center md:text-left">
