@@ -59,6 +59,7 @@ const galleryImages = [img1, img2, img3, img4];
               autoplay
               loop
               muted
+              playsinline
             />
             <div
               class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 hover:opacity-100 transition-opacity"
@@ -105,6 +106,7 @@ const galleryImages = [img1, img2, img3, img4];
               autoplay
               loop
               muted
+              playsinline
             />
             <div
               class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 hover:opacity-100 transition-opacity"
