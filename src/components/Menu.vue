@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted } from "vue";
 import { Play, ShoppingBag, UtensilsCrossed } from "lucide-vue-next";
 import img1 from "@assets/generated_images/dish1.jpg";
 import img2 from "@assets/generated_images/dish2.jpg";
@@ -7,6 +8,16 @@ import img4 from "@assets/generated_images/dish4.jpg";
 import video from "@assets/menuvideo.mp4";
 
 const galleryImages = [img1, img2, img3, img4];
+
+onMounted(() => {
+  // Get all videos in this component and trigger play
+  const videos = document.querySelectorAll('video');
+  videos.forEach(video => {
+    video.play().catch(() => {
+      // Autoplay failed, user will need to click play
+    });
+  });
+});
 </script>
 
 <template>
@@ -60,6 +71,7 @@ const galleryImages = [img1, img2, img3, img4];
               loop
               muted
               playsinline
+              webkit-playsinline="true"
             />
             <div
               class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 hover:opacity-100 transition-opacity"
@@ -107,6 +119,7 @@ const galleryImages = [img1, img2, img3, img4];
               loop
               muted
               playsinline
+              webkit-playsinline="true"
             />
             <div
               class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 hover:opacity-100 transition-opacity"
