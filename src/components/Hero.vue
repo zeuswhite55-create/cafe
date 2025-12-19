@@ -1,7 +1,7 @@
 <script setup>
 import { ArrowRight } from 'lucide-vue-next'
-import logo from '@assets/Gemini_Generated_Image_aojifdaojifdaoji-removebg-preview_1765989501127.png'
-import heroVideo from '@assets/Recording_2025-12-17_221508_1765989924133.mp4'
+import logo from '@assets/logo.png'
+import heroVideo from '@assets/herovideo.mp4'
 </script>
 
 <template>
