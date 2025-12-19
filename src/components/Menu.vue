@@ -66,7 +66,6 @@ onMounted(() => {
             <video
               :src="video"
               class="w-full h-full object-cover"
-              controls
               autoplay
               loop
               muted
@@ -74,7 +73,8 @@ onMounted(() => {
               webkit-playsinline="true"
             />
             <div
-              class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 hover:opacity-100 transition-opacity"
+              class="absolute inset-0 flex items-center justify-center bg-black/40 cursor-pointer"
+              @click="$event.currentTarget.previousElementSibling.play()"
             >
               <Play class="w-12 h-12 text-white" />
             </div>
@@ -114,7 +114,6 @@ onMounted(() => {
             <video
               :src="video"
               class="w-full h-full object-cover"
-              controls
               autoplay
               loop
               muted
@@ -122,7 +121,8 @@ onMounted(() => {
               webkit-playsinline="true"
             />
             <div
-              class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 hover:opacity-100 transition-opacity"
+              class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 hover:opacity-100 transition-opacity cursor-pointer"
+              @click="$event.currentTarget.previousElementSibling.play()"
             >
               <Play class="w-16 h-16 text-white" />
             </div>
