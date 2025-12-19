@@ -1,5 +1,4 @@
 <script setup>
-import { onMounted } from "vue";
 import { Play, ShoppingBag, UtensilsCrossed } from "lucide-vue-next";
 import img1 from "@assets/generated_images/dish1.jpg";
 import img2 from "@assets/generated_images/dish2.jpg";
@@ -8,16 +7,6 @@ import img4 from "@assets/generated_images/dish4.jpg";
 import video from "@assets/menuvideo.mp4";
 
 const galleryImages = [img1, img2, img3, img4];
-
-onMounted(() => {
-  // Get all videos in this component and trigger play
-  const videos = document.querySelectorAll('video');
-  videos.forEach(video => {
-    video.play().catch(() => {
-      // Autoplay failed, user will need to click play
-    });
-  });
-});
 </script>
 
 <template>
@@ -66,7 +55,7 @@ onMounted(() => {
             loop
             muted
             playsinline
-            x-webkit-airplay="allow"
+            preload="metadata"
           />
         </div>
         <!-- Images on right side in grid -->
@@ -104,7 +93,7 @@ onMounted(() => {
             loop
             muted
             playsinline
-            x-webkit-airplay="allow"
+            preload="metadata"
           />
         </div>
 
