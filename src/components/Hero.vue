@@ -1,17 +1,30 @@
 <script setup>
+import { ref, onMounted } from 'vue'
 import { ArrowRight } from 'lucide-vue-next'
 import logo from '@assets/logo.png'
 import heroVideo from '@assets/herovideo.mp4'
+
+const videoRef = ref(null)
+
+onMounted(() => {
+  if (videoRef.value) {
+    videoRef.value.play().catch(() => {
+      // Autoplay failed
+    })
+  }
+})
 </script>
 
 <template>
   <section class="relative h-screen w-full overflow-hidden bg-primary">
     <div class="absolute inset-0 z-0">
       <video
+        ref="videoRef"
         autoplay
         loop
         muted
         playsinline
+        webkit-playsinline="true"
         class="h-full w-full object-cover opacity-80"
       >
         <source :src="heroVideo" type="video/mp4" />
