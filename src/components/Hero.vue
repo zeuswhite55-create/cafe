@@ -40,7 +40,7 @@ import heroVideo from '@assets/Recording_2025-12-17_221508_1765989924133.mp4'
       </p>
 
       <a
-        href="https://wa.me/"
+        href="https://www.eazydiner.com/goa/bloom-and-brew-assagao-north-goa-686133"
         target="_blank"
         rel="noopener noreferrer"
         class="group relative overflow-hidden bg-white text-primary px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase flex items-center gap-2 hover:bg-accent hover:text-white transition-colors duration-300"

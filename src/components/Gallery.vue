@@ -1,12 +1,16 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useScroll, useWindowSize } from '@vueuse/core'
-import img1 from "@assets/generated_images/cafe_storefront_exterior.png"
-import img2 from "@assets/generated_images/barista_pouring_coffee.png"
-import img3 from "@assets/generated_images/delicious_cafe_food_spread.png"
-import img4 from "@assets/generated_images/people_enjoying_coffee.png"
+import img1 from "@assets/generated_images/space1.jpg"
+import img2 from "@assets/generated_images/space2.jpg"
+import img3 from "@assets/generated_images/space3.jpg"
+import img4 from "@assets/generated_images/space4.jpg"
+import img5 from "@assets/generated_images/space5.jpg"
+import img6 from "@assets/generated_images/space6.jpg"
+import img7 from "@assets/generated_images/space7.jpg"
+import img8 from "@assets/generated_images/space8.jpg"
 
-const images = [img1, img2, img3, img4, img1, img2, img3, img4]
+const images = [img1, img2, img3, img4, img5, img6, img7, img8]
 
 const container = ref(null)
 const { y } = useScroll(window)
