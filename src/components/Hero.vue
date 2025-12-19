@@ -5,7 +5,6 @@ import logo from '@assets/logo.png'
 import heroVideo from '@assets/herovideo.mp4'
 
 const videoRef = ref(null)
-
 onMounted(() => {
   if (videoRef.value) {
     videoRef.value.play().catch(() => {
