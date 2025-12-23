@@ -85,8 +85,12 @@ const reviews = [
           <h4 class="font-bold mb-6 text-accent">Opening Hours</h4>
           <ul class="space-y-2 font-mono text-sm opacity-80">
             <li class="flex justify-center md:justify-between gap-8 md:gap-0">
-              <span>Mon - Fri</span>
+              <span>Mon - Tue, Thu - Fri</span>
               <span>9:00 AM - 11:00 PM</span>
+            </li>
+            <li class="flex justify-center md:justify-between gap-8 md:gap-0">
+              <span>Wednesday</span>
+              <span class="text-red-400 font-bold">CLOSED</span>
             </li>
             <li class="flex justify-center md:justify-between gap-8 md:gap-0">
               <span>Sat - Sun</span>
