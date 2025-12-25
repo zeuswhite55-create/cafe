@@ -103,8 +103,7 @@ const galleryImages = [img1, img2, img3, img4];
           </h3>
           <p class="text-lg text-secondary-foreground/80 mb-8 font-light">
             Discover the perfect blend of ambiance, taste, and community. Watch
-            our latest moments and join us for an unforgettable coffee
-            experience.
+            our latest moments and join us for an unforgettable experience.
           </p>
           <a
             href="https://www.instagram.com/reel/DFm_OCVSxbr/"
